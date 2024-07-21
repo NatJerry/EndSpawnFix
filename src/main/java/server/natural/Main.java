@@ -10,7 +10,7 @@ public final class Main extends JavaPlugin {
     public void onEnable() {
         saveDefaultConfig();
         Bukkit.getPluginManager().registerEvents(new onPlayerPlaceBlockEvent() , this);
-
+        Utils.plugin = this;
     }
 
     @Override
