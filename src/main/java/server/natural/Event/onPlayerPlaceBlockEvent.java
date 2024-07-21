@@ -13,21 +13,22 @@ import java.util.Objects;
 import java.util.function.Consumer;
 
 public class onPlayerPlaceBlockEvent implements Listener {
-    ScheduledTask task;
-    public void stop(){
-        task.cancel();
-    }
+//    ScheduledTask task;
+//    public void stop(){
+//        task.cancel();
+//    }
     @EventHandler
     public void onPlayerPlaceBlockEvent(BlockPlaceEvent e){
 
         if(e.getPlayer().getWorld().getEnvironment() == World.Environment.THE_END && (e.getBlockPlaced().getType() == Material.RED_MUSHROOM || e.getBlockPlaced().getType() == Material.BROWN_MUSHROOM)){
 
-            task = Bukkit.getRegionScheduler().run(Utils.plugin, e.getPlayer().getLocation(), new Consumer<ScheduledTask>() {
-                @Override
-                public void accept(ScheduledTask scheduledTask) {
-                    e.setCancelled(true);
-                }
-            });
+//            task = Bukkit.getRegionScheduler().run(Utils.plugin, e.getPlayer().getLocation(), new Consumer<ScheduledTask>() {
+//                @Override
+//                public void accept(ScheduledTask scheduledTask) {
+//                    e.getBlockPlaced().
+//                }
+//            });
+            e.setCancelled(true);
             e.getPlayer().sendMessage(Objects.requireNonNull(Utils.config.getString("kickmessage")));
             e.getPlayer().saveData(); //防止某些玩家恶意刷物品
 
