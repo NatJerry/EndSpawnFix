@@ -4,3 +4,4 @@ main: server.natural.Main
 api-version: 1.17
 authors: [ Jerry ]
 description: A small plugin to fix the spawn limit in The_End
+folia-supported: true
